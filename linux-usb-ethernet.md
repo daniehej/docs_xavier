@@ -21,12 +21,12 @@ Use the following procedure to configure your host as a gateway for Jetson.
    permanent by editing /etc/sysctl.conf.
 
 2. Enable Network Address Translation (NAT) using your host's configuration
-   tools to do this, or by running the following command as root:
+   tools, or by running the following command as root:
 
    ```bash
    sudo iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 192.168.1.100
    ```
-
+   
    where:
    
     `eth0` is the name of your host's upstream Ethernet interface.
@@ -39,3 +39,8 @@ Use the following procedure to configure your host as a gateway for Jetson.
 
 Depending on your Linux distribution, you may have to run this command every
 time your host is rebooted.
+
+You can check this in the iptables rules with
+```bash
+sudo iptables -t nat -L
+```
