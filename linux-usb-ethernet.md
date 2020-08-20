@@ -10,8 +10,8 @@ Use the following procedure to configure your host as a gateway for Jetson.
 1. Enable IP forwarding with your host's configuration tools, or by running
    the following command as root:
 
-   ```
-   echo 1 > /proc/sys/net/ipv4/ip_forward
+   ```bash
+   sudo echo 1 > /proc/sys/net/ipv4/ip_forward
    ```
 
    If your host system is connected to multiple networks at the same time,
@@ -23,13 +23,16 @@ Use the following procedure to configure your host as a gateway for Jetson.
 2. Enable Network Address Translation (NAT) using your host's configuration
    tools to do this, or by running the following command as root:
 
-   ```
-   iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 192.168.1.100
+   ```bash
+   sudo iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 192.168.1.100
    ```
 
    where:
+   
     `eth0` is the name of your host's upstream Ethernet interface.
+    
     `192.168.1.100` is your host's IP address on that interface.
+    
    These can be obtained using the command `ifconfig`
    
    ![ifconfig](https://git.its.aau.dk/WW82ZE/docs_xavier/raw/branch/master/img/ifconfig.png)
