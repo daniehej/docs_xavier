@@ -60,8 +60,7 @@ AAU has a license for VMWare. It can be downloaded from <https://www.ekstranet.i
 5.  (Optional) Once Ubuntu is installed, if you want to drag and drop files into the VM, you need to install
     open-vm-tools for resolution scaling and clip board sharing:
 
-    1.  sudo apt update && sudo apt -y upgrade && sudo apt
-        -y install open-vm-tools open-vm-tools-desktop
+    1.  `sudo apt update && sudo apt -y upgrade && sudo apt -y install open-vm-tools open-vm-tools-desktop`
 
     2.  Reboot when done.
 
