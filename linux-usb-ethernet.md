@@ -3,7 +3,7 @@ Source and further reading: `README-usb-dev-mode.txt`.
 
 On Windows and Mac, the Jetson AGX Xavier should automatically get forwarded ethernet over USB.
 
-On Linux, this needs to be manually configured.
+On Linux, this needs to be manually configured to enable ipforwarding and NAT.
 
 Use the following procedure to configure your host as a gateway for Jetson.
 
