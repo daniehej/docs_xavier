@@ -7,7 +7,6 @@ If you do not have a computer running Ubuntu 18.04, you can use a virtual machin
 
 ## Setup
 
-
 1.  Unpack the Nvidia Jetson AGX Xavier
 
 2.  Plug in the USB-C to the front USB-C port to a PC running Ubuntu 18.04. 
@@ -23,17 +22,18 @@ If you do not have a computer running Ubuntu 18.04, you can use a virtual machin
 
 7.  Wait for the installation and the flashing of the Jetson to complete
 
-8.  Plug in keyboard, mouse and screen. You can plug in two USB devices using the USB-A/eSATA combiport and the USB-C to USB-A cable. 
+8.  Plug in keyboard, mouse and screen. You can plug in two USB devices using the USB-A/eSATA combiport and the USB-C to USB-A cable 
 
 9.  Run the basic setup on the Jetson, and choose a username/password, e.g. nvidia/nvidia
 
-10. Input the IP `192.168.55.1` and username/password to the SDK Manager to install the
-    SDK
+10. Input the IP `192.168.55.1` and username/password to the SDK Manager to install the SDK
 
 
 ## First Use
 - After installing the SDK, you can change the power setting in the top menu bar. The default is "MODE_10W". Set the power setting to "MAXN" for max performance and max power usage.
+
 - To update the system run the commands `sudo apt update` and `sudo apt upgrade`
+
 
 ## Virtual Machine Setup
 On the support forums, Nvidia states that a physical computer running Ubuntu 18.04 is required. However, it is in fact possible to flash the Jetson from a Virtual Machine as long as VMware is used as the virtualization solution. Virtualbox does not give good results since its USB passthrough is not good enough.
@@ -57,7 +57,7 @@ AAU has a license for VMWare. It can be downloaded from <https://www.ekstranet.i
 
 4.  Install Ubuntu in the VM
 
-5.  (Optional) Once Ubuntu is installed, if you want to drag and drop tiles into the VM, you need to install
+5.  (Optional) Once Ubuntu is installed, if you want to drag and drop files into the VM, you need to install
     open-vm-tools for resolution scaling and clip board sharing:
 
     1.  sudo apt update && sudo apt -y upgrade && sudo apt
