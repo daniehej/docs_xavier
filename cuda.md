@@ -2,8 +2,8 @@
 ### Running CUDA under sudo
 
 Some times you will need sudo for running programs and so on. However, the
-sudo user can not by default use CUDA tools. In order to fix this, edit the file \"visudo\" eg by using nano
-```
+sudo user can not by default use CUDA tools. In order to fix this, edit the file `visudo` eg by using nano
+```bash
 EDITOR=nano sudo visudo
 ```
 
@@ -14,7 +14,7 @@ At the end of the `secure_path`, add the following
 ```
 so it will look something like 
 ```
-secure\_path=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/cuda-10.0/bin\"
+secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/cuda-10.0/bin"
 ```
 
 Sudo and root users can now see CUDA tools.
@@ -25,7 +25,7 @@ In order to compile CUDA, we follow the example in <https://devblogs.nvidia.com/
 
 Start by making a new folder to put or files in so it's all
 together, and go into that folder by doing so:
-```
+```bash
 mkdir nvidia-test
 cd nvidia-test
 ```
@@ -33,12 +33,12 @@ cd nvidia-test
 Now that we are in the folder, `nvidia-test`, we will make our new file,
 we can use nano for that:
 
-```
+```bash
 nano profile.cu
 ```
 
 In the file put the following, and then save the file by pressing
-\"Ctrl+O\" then \"Enter\" and exit the editor \"Ctrl+X\":
+"Ctrl+O" then "Enter" and exit the editor "Ctrl+X":
 
     int main()
     {
@@ -56,22 +56,22 @@ In the file put the following, and then save the file by pressing
     }
 
 When the file is saved we can compile it by running the following:
+```bash
+nvcc profile.cu -o profile_test
 ```
-nvcc profile.cu -o profile\_test
-```
-This compiles the file profile.cu and saves it as profile\_test which is
+This compiles the file profile.cu and saves it as profile_test which is
 an executable, we can run that file by simply typing:
 
-```
-./profile\_test
+```bash
+./profile_test
 ```
 
 In the example they are looking at how to optimize data transfers so
-they use the tool \"nvprof\" to measure the performance of the
+they use the tool "nvprof" to measure the performance of the
 application,
 
-```
-nvprof ./profile\_test
+```bash
+nvprof ./profile_test
 ```
 
-You can try and run the \"BandwidthTest\" now on you own.
+You can try and run the "BandwidthTest" now on you own.
