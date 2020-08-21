@@ -1,7 +1,7 @@
-# Tips and Tricks for Jetson Xavier
-These are useful
-## Software packages
-### JetPack
+# Tips and Tricks for Jetson AGX Xavier
+This document contains useful software and links to documentation that we have found to be useful when working with Jetson AGX Xavier.
+# Software packages
+## JetPack
 Nvidia Jetson-specific components are collected in JetPack. They can be installed as Debian packages
 
 This enables, for example, installation of all JetPack components via
@@ -20,7 +20,7 @@ metapackage, enter the command:
 sudo apt-cache show nvidia-jetpack
 ```
 
-### Python and PyTorch
+## Python and PyTorch
 Install useful Python packages
 
 ```bash
@@ -29,6 +29,7 @@ pip3 install cython
 pip3 install numpy jupyter jupyterlab matplotlib pandas
 ```
 
+### PyTorch
 Install PyTorch: Follow the instructions from [Nvidia forums](https://forums.developer.nvidia.com/t/pytorch-for-jetson-nano-version-1-6-0-now-available/72048)
 
 ```bash
@@ -37,6 +38,7 @@ sudo apt-get install python3-pip libopenblas-base libopenmpi-dev
 pip3 install Cython
 pip3 install numpy torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 ```
+
 Install torchvision
 
 ```bash
@@ -46,16 +48,67 @@ cd torchvision
 sudo python3 setup.py install
 ```
 
-### Tools
+## Tools
+### jetson_stats
 Command line resource monitor [jetson_stats](https://github.com/rbonghi/jetson_stats). Works well in SSH.
 ```
 sudo -H pip3 install -U jetson-stats
 jtop
 ```
-
-Web-based resource monitor Netdata
+### Netdata
+Web-based resource monitor [Netdata](https://github.com/netdata/netdata)
 ```
 sudo apt install curl
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 ```
-open your browser to <http://192.168.55.1:19999/>
+open your browser to <http://192.168.55.1:19999/> to see the Netdata interface.
+
+To disable Netdata, run 
+```
+systemctl mask netdata
+systemctl stop netdata
+```
+To enable it again, use
+```
+systemctl unmask netdata
+systemctl start netdata
+```
+
+
+
+# Tech specs
+
+### Jetson AGX Xavier module
+The module itself contains the SOC and acts as the brains of the operation. Its specifications are shown in the table.
+
+|                    | Jetson AGX Xavier module                                                                  |
+|--------------------|-------------------------------------------------------------------------------------------|
+| GPU                | 512\-core Volta GPU with 64 Tensor Cores                                                  |
+| CPU                | 8\-core Nvidia Carmel CPU \(ARM v8\.2 64\-bit CPU, 8MB L2 \+ 4MB L3\) \(up to 2,2656GHz\) |
+| Memory             | 16GB 256\-Bit LPDDR4x \| 137GB/s                                                          |
+| Storage            | 32GB eMMC 5\.1                                                                            |
+| DL Accelerator     | \(2x\) NVDLA Engines                                                                      |
+| Vision Accelerator | 7\-way VLIW Vision Processor                                                              |
+| Encoder/Decoder    | \(2x\) 4Kp60 \| HEVC/\(2x\) 4Kp60 \| 12\-Bit Support                                      |
+| Size               | 105 mm x 105 mm x 65 mm                                                                   |
+| Deployment         | Module \(Jetson AGX Xavier\)                                                              |
+
+### Developer Kit interface board
+In-depth specification of the port capabilities, as well as pinouts for the GPIO pins on the Developer kit board can be found in the [Carrier Board Specification](https://static5.arrow.com/pdfs/2018/12/12/12/23/1/848262/nvda_/manual/jetson_xavier_developer_kit_carrier_board_specification.pdf).
+
+A short summary of the ports is shown in the table.
+
+|                          | Jetson AGX Xavier Developer Kit Interface Board                                                  |
+|--------------------------|--------------------------------------------------------------------------------------------------|
+| PCIe x16                 | x8 PCIe Gen4/x8 SLVS\-EC                                                                         |
+| RJ45                     | Gigabit Ethernet                                                                                 |
+| USB\-C                   | 2x USB 3\.1, DP \(Optional\), PD \(Optional\) Close\-System Debug and Flashing Support on 1 Port |
+| Camera Connector         | \(16x\) CSI\-2 Lanes                                                                             |
+| M\.2 Key M               | NVMe                                                                                             |
+| M\.2 Key E               | PCIe x1 \+ USB 2\.0 \+ UART \(for Wi\-Fi/LTE\) / I2S / PCM                                       |
+| 40\-Pin Header           | UART \+ SPI \+ CAN \+ I2C \+ I2S \+ DMIC \+ GPIOs                                                |
+| HD Audio Header          | High\-Definition Audio                                                                           |
+| eSATAp \+ USB3\.0 Type A | SATA Through PCIe x1 Bridge \(PD \+ Data for 2\.5\-inch SATA\) \+ USB 3\.0                       |
+| HDMI Type A              | HDMI 2\.0                                                                                        |
+| uSD/UFS Card Socket      | SD/UFS                                                                                           |
+
