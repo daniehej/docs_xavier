@@ -1,5 +1,18 @@
 # Tips and Tricks for Jetson AGX Xavier
 This document contains useful software and links to documentation that we have found to be useful when working with Jetson AGX Xavier.
+# Links
+Nvidia Developer forum Jetson AGX Xavier topic
+- https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/jetson-agx-xavier/75
+
+Jetson Community Projects
+- https://developer.nvidia.com/embedded/community/jetson-projects
+
+Embedded Linux wiki with many further links
+- https://elinux.org/Jetson_AGX_Xavier
+
+Further links to resources
+- https://forums.developer.nvidia.com/t/links-to-jetson-agx-xavier-resources-wiki/64659
+
 # Software packages
 ## JetPack
 Nvidia Jetson-specific components are collected in JetPack. They can be installed as Debian packages
@@ -73,7 +86,8 @@ To enable it again, use
 systemctl unmask netdata
 systemctl start netdata
 ```
-
+### GPIO pins
+The GPIO pins can be controlled in Python using [jetson-gpio](https://github.com/NVIDIA/jetson-gpio)
 
 
 # Tech specs
