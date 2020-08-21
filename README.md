@@ -1,6 +1,8 @@
 # Jetson AGX Xavier Documentation
 
-Documentation for Jetson AGX Xavier.
+Documentation for Jetson AGX Xavier. 
+
+This documentation is based on the work by Sebastian Bro Damsgaard and Mikki Alexander Mousing Sørensen.
 
 ## Contents
 
