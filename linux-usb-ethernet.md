@@ -33,7 +33,7 @@ Use the following procedure to configure your host as a gateway for Jetson.
     
     `192.168.1.100` is your host's IP address on that interface.
     
-   These can be obtained using the command `ifconfig`
+   These can be obtained using `ifconfig`
    
    ![ifconfig](https://git.its.aau.dk/WW82ZE/docs_xavier/raw/branch/master/img/ifconfig.png)
 
