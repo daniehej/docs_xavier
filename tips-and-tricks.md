@@ -89,7 +89,6 @@ systemctl start netdata
 ### GPIO pins
 The GPIO pins can be controlled in Python using [jetson-gpio](https://github.com/NVIDIA/jetson-gpio)
 
-
 # Tech specs
 
 ### Jetson AGX Xavier module
@@ -136,3 +135,6 @@ You can perform a disk speed test using `dd` by first creating a test file and t
 dd if=/dev/zero of=testfile bs=2G count=1 oflag=direct
 dd if=testfile of=/dev/null
 ```
+
+## Performance Comparison
+In a small AI training test which was mildly CPU-intensive, the Jetson Xavier took 17 sec per epoch, while a Intel i7-4790K with a Nvidia GTX 960 took around 11 sec per epoch. This might give an idea about the performance of the Jetson for training, however your results may differ depending on how CPU- or GPU-intensive the workload is.
