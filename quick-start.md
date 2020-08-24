@@ -9,7 +9,7 @@ If you do not have a computer running Ubuntu 18.04, you can use a virtual machin
 
 1.  Unpack the Nvidia Jetson AGX Xavier
 
-2.  Plug in the USB-C to the front USB-C port to a PC running Ubuntu 18.04. 
+2.  Plug in the USB-C to the front USB-C port to a PC running Ubuntu 18.04
 
 3.  Go to <https://developer.nvidia.com/nvidia-sdk-manager> and download the SDK manager
 
@@ -53,7 +53,7 @@ AAU has a license for VMWare. It can be downloaded from <https://www.ekstranet.i
     3.  At least 80 GB storage space
 
     4.  Configure the VM to use USB 3. This is important
-        for speeding up the flashing process.
+        for speeding up the flashing process
 
 4.  Install Ubuntu in the VM
 
@@ -62,12 +62,12 @@ AAU has a license for VMWare. It can be downloaded from <https://www.ekstranet.i
 
     1.  `sudo apt update && sudo apt -y upgrade && sudo apt -y install open-vm-tools open-vm-tools-desktop`
 
-    2.  Reboot when done.
+    2.  Reboot when done
 
-6.  Connect the front USB-C on the Jetson to your host computer.
+6.  Connect the front USB-C on the Jetson to your host computer
 
-7.  In the VMware window find the USB section in the top menu bar.
+7.  In the VMware window find the USB section in the top menu bar
 
-8.  Find the Nvidia Jetson device and select it.
+8.  Find the Nvidia Jetson device and select it
 
-At this point the Jetson Xavier should be connected to the Ubuntu VM.
+At this point the Jetson Xavier should be connected to the Ubuntu VM
