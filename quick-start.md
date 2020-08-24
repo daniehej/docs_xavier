@@ -1,19 +1,24 @@
 # Getting Started
+The AGX Xavier does not have an operating system installed by default
 
 In order to flash an operating system on the Jetson AGX Xavier, it is necesary to use a computer running Ubuntu 18.04. The SDK manager does not support other operating systems or newer versions of Ubuntu.
 
 If you do not have a computer running Ubuntu 18.04, you can use a virtual machine in VMware to run the SDK Manager. See [Virtual Machine Setup](#virtual-machine-setup).
+
+On the side of the unit, there are three buttons which are laid out as follows.
+
+![Button Layout](https://git.its.aau.dk/WW82ZE/docs_xavier/raw/branch/master/img/xavier.png)
 
 
 ## Setup
 
 1.  Unpack the Nvidia Jetson AGX Xavier
 
-2.  Plug in the USB-C to the front USB-C port to a PC running Ubuntu 18.04
+2.  Use the USB-C cable to connect the front USB-C port to a PC running Ubuntu 18.04. The front is the side with the GPIO pins and micro USB debugging interface
 
 3.  Go to <https://developer.nvidia.com/nvidia-sdk-manager> and download the SDK manager
 
-4.  On the Jetson press and hold the middle button and then press the
+4.  On the Jetson press and hold the "Force Recovery" middle button and then press the
     power button on the left, then release both
 
 5.  Run SDK Manager
