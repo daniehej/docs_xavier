@@ -126,3 +126,13 @@ A short summary of the ports is shown in the table.
 | HDMI Type A              | HDMI 2\.0                                                                                        |
 | uSD/UFS Card Socket      | SD/UFS                                                                                           |
 
+
+## Disk Speed
+The disk speed of the AGX Xavier is around 116MB/s write and 293MB/s read, if you get read speed much over that (eg. 360MB/s), then it might be the cache you are reading from.
+
+You can perform a disk speed test using `dd` by first creating a test file and then copying it to `/dev/null`
+
+```
+dd if=/dev/zero of=testfile bs=2G count=1 oflag=direct
+dd if=testfile of=/dev/null
+```
