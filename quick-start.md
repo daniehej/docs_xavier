@@ -1,7 +1,7 @@
 # Getting Started
 The AGX Xavier does not have an operating system installed by default
 
-In order to flash an operating system on the Jetson AGX Xavier, it is necesary to use a computer running Ubuntu 18.04. The SDK manager does not support other operating systems or newer versions of Ubuntu.
+In order to flash an operating system on the Jetson AGX Xavier, it is necesary to use a computer running Ubuntu 18.04 (Update: As of 2022, it should also be possible to use Ubuntu 20.04). The SDK manager does not support other operating systems or newer versions of Ubuntu.
 
 If you do not have a computer running Ubuntu 18.04, you can use a virtual machine in VMware to run the SDK Manager. See [Virtual Machine Setup](#virtual-machine-setup).
 
