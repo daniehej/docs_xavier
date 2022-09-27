@@ -2,6 +2,8 @@
 
 Documentation for Jetson AGX Xavier. 
 
+Original at https://git.its.aau.dk/WW82ZE/docs_xavier
+
 This documentation is based on the work by Sebastian Bro Damsgaard and Mikki Alexander Mousing Sørensen.
 
 ## Contents
@@ -20,3 +22,8 @@ Guide to getting started and compiling CUDA on the Xavier.
 
 ### [Linux USB Ethernet](linux-usb-ethernet.md)
 How to enable ethernet over USB on Linux.
+
+## Additional tips and tricks
+Inspired by the ITS git repository, Github user andressobral has added additional helpful tips and tricks in this popular gist.
+
+https://gist.github.com/andrewssobral/ae77483b8fa147cce98b5b92f1a5ae17
